@@ -10,45 +10,98 @@
     href="https://unpkg.com/aplayer/dist/APlayer.min.css"/>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       background: #121212;
       color: white;
       font-family: Arial, sans-serif;
+
       display: flex;
       justify-content: center;
       align-items: center;
+
       min-height: 100vh;
+
+      padding: 20px;
+
+      overflow-x: hidden;
     }
 
     .container {
-      width: 90%;
-      max-width: 700px;
+      width: 100%;
+      max-width: 500px;
     }
 
     h1 {
       text-align: center;
       margin-bottom: 20px;
+
+      font-size: 32px;
+      line-height: 1.2;
+    }
+
+    .cover {
+      width: 100%;
+      border-radius: 18px;
+      margin-bottom: 20px;
+
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+
+    #player {
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .aplayer {
+      background: #1b1b1b !important;
+      border: none !important;
+      color: white !important;
+    }
+
+    .aplayer-lrc {
+      height: 240px !important;
+    }
+
+    .aplayer-lrc p {
+      font-size: 16px !important;
+      line-height: 1.8 !important;
+      color: rgba(255,255,255,0.55) !important;
+    }
+
+    .aplayer-lrc p.aplayer-lrc-current {
+      color: white !important;
+      font-size: 20px !important;
+      font-weight: bold;
     }
 
     .footer {
       text-align: center;
       margin-top: 20px;
-      opacity: 0.6;
-      font-size: 14px;
+      opacity: 0.5;
+      font-size: 13px;
     }
   </style>
 </head>
+
 <body>
 
 <div class="container">
+
   <h1>Tres de la Mañana</h1>
+
+  <img class="cover" src="./cover.jpg">
 
   <div id="player"></div>
 
   <div class="footer">
-    
+    Montréal, QC
   </div>
+
 </div>
 
 <script src="https://unpkg.com/aplayer/dist/APlayer.min.js"></script>
@@ -62,9 +115,9 @@ const ap = new APlayer({
   audio: [{
     name: 'Tres de la Mañana',
     artist: 'Meta AI',
-    url: 'song.mp3',
-    cover: 'cover.jpg',
-    lrc: 'lyrics.lrc'
+    url: './song.mp3',
+    cover: './cover.jpg',
+    lrc: './lyrics.lrc'
   }]
 });
 </script>
