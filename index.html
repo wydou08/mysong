@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Song</title>
+
+  <link rel="stylesheet"
+    href="https://unpkg.com/aplayer/dist/APlayer.min.css"/>
+
+  <style>
+    body {
+      margin: 0;
+      background: #121212;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 700px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      opacity: 0.6;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>My Song</h1>
+
+  <div id="player"></div>
+
+  <div class="footer">
+    Lyrics synced with LRC
+  </div>
+</div>
+
+<script src="https://unpkg.com/aplayer/dist/APlayer.min.js"></script>
+
+<script>
+const ap = new APlayer({
+  container: document.getElementById('player'),
+
+  lrcType: 3,
+
+  audio: [{
+    name: 'My Song',
+    artist: 'Your Name',
+    url: 'song.mp3',
+    cover: 'cover.jpg',
+    lrc: 'lyrics.lrc'
+  }]
+});
+</script>
+
+</body>
+</html>
