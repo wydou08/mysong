@@ -124,17 +124,19 @@
         0 8px 32px rgba(0,0,0,0.4);
     }
 
-    /* Remove ugly gradients */
+    /* Remove lyric gradients */
     .aplayer-lrc:before,
     .aplayer-lrc:after {
       display: none !important;
     }
 
-    /* Lyrics area */
+    /* Lyrics container */
     .aplayer-lrc {
       height: 220px !important;
 
       padding: 20px 10px !important;
+
+      overflow: hidden !important;
 
       mask-image: linear-gradient(
         to bottom,
@@ -147,27 +149,35 @@
 
     /* Normal lyric lines */
     .aplayer-lrc p {
-      font-size: 14px !important;
+      font-size: 15px !important;
 
-      line-height: 1.9 !important;
+      line-height: 1.8 !important;
 
       color: rgba(255,255,255,0.38) !important;
 
       margin: 0 !important;
 
-      transition: all 0.25s ease;
+      opacity: 0.8;
+
+      transform: none !important;
+
+      transition:
+        color 0.2s ease,
+        opacity 0.2s ease;
     }
 
-    /* Current lyric */
+    /* Current lyric line */
     .aplayer-lrc p.aplayer-lrc-current {
       color: white !important;
 
-      font-size: 18px !important;
+      font-size: 15px !important;
 
       font-weight: 700;
 
+      opacity: 1;
+
       text-shadow:
-        0 0 10px rgba(255,255,255,0.35);
+        0 0 8px rgba(255,255,255,0.25);
     }
 
     /* Progress bar */
